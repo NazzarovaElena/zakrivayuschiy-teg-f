@@ -13,4 +13,237 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font-family), sans-serif;
+  font-weight: var(--text-font-weight);
+  background-image: var(--background-image); /* сделана замена transparent на цвет для Safari */
+  background-attachment: fixed; /* как проверить что работает?*/
+  background-size: cover;
+  font-size: 18px;
+  line-height: 21px;
+
+}
+
+@supports(font-variation-settings: normal) {
+  .page {
+    font-variation-settings: "wght" var(--text-font-weight);
+  }
+  
+}
+
+/* стили блока header */
+
+.header {
+  margin: 100px auto;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0;
+  inline-size: var(--block-width);
+  color: var(--color);
+  background-color: var(--bg-color);
+  border: 2px solid #000;
+  font-family: var(--accent-font-family), monospace;
+  text-align: center;
+}
+
+.logo {
+  
+}
+
+.header__header {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 1;
+}
+
+.header__sub-header {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 1;
+  padding-top: 20px;
+}
+
+/* стили блока main */
+
+.cards {
+  display: grid;
+  gap: 50px;
+  margin: 0 auto;
+  inline-size: var(--block-width);
+  color: var(--color);
+  font-family: var(--main-font-family), sans-serif;
+  padding-bottom: 100px;
+}
+
+.cards__list {
+  display: grid;
+  gap: 50px;
+}
+
+/* содержимое карточки */
+
+.card {
+  display: grid;
+  border: 2px solid #000;
+  background-color: var(--bg-color);
+}
+
+.card__title {
+  font-weight: var(--header-font-weight);
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px 10px;
+}
+
+@supports(font-variation-settings: normal) {
+  .card__title {
+    font-variation-settings: "wght" var(--header-font-weight);
+  }
+  
+}
+
+.card__image {
+  position: relative;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  line-height: 0;
+}
+
+.card__image picture {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.card__label {
+  position: absolute;
+  font-family: var(--accent-font-family), monospace;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0;
+  top: 25px;
+  right: 25px;
+  color: var(--label-color);
+  mix-blend-mode: hard-light;
+  text-shadow: 1px var(--label-stroke-color);
+}
+
+@supports (text-stroke: 1px var(--label-stroke-color)) or (-webkit-text-stroke: 1px var(--label-stroke-color)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-stroke-color);
+    text-stroke: 1px var(--label-stroke-color);
+    text-shadow: none;
+  }
+}
+
+.card__text {
+  margin: 25px 25px 0;
+}
+
+.card__like {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  margin: 25px;
+}
+
+.button {
+  background-color: var(--bg-color);
+  border: 2px solid #000;
+  block-size: 38px;
+}
+
+.card__icon-button {
+  padding: 1px 6px 1px 0;
+  border: none;
+  line-height: 0;
+}
+
+.card__like-button {
+  width: 130px;
+  justify-self: end;
+}
+
+.button__text {
+  font-family: var(--accent-font-family), monospace;
+  font-size: 14px;
+  line-height: 0.9;
+  letter-spacing: 0;
+  justify-content: end;
+}
+
+/* кнопка сохранения */
+
+.button__save {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 8px;
+  padding: 15px 20px;
+  justify-self: center;
+  background-color: var(--bg-color);
+  block-size: auto;
+}
+
+.button__save svg {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+.dialog__save {
+  display: none;
+  inline-size: 353px;
+  padding: 30px;
+  font-family: var(--accent-font-family), monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  grid-template-areas:
+    "floppy text"
+    "form form";
+}
+
+.dialog__save[open] {
+  display: grid;
+}
+
+.dialog__save svg {
+  inline-size: 39px;
+  block-size: 39px;
+  margin: 12px 20px 12px 0;
+  grid-area: floppy;
+}
+
+.dialog__save p {
+  grid-area: text;
+}
+
+.dialog__save form  {
+  inline-size: 100%;
+  grid-area: form;
+}
+
+.dialog__save button {
+  inline-size: 100%;
+  margin-block-start: 30px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.7);
+  /* backdrop-filter: blur(1px); */
+} 
+
+@media (width <= 375px) {
+  .button__save {
+    grid-auto-flow: row;
+  }
+
+  .button__save svg {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .dialog__save {
+    padding: 30px 40px;
+  }
 }
