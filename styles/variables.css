@@ -14,4 +14,7 @@
                     repeating-linear-gradient(#d3d3d3, rgb(211 211 211 / 0) 2px),
                     linear-gradient(#e7e7e7 0.01%, #1a1a1a); /* начали менять цвет от 0.01% всей высоты градиента */
 --block-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+--contour-color: #000;
+--animation-fill-color: red;
+
 }
