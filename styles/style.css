@@ -43,10 +43,6 @@
   text-align: center;
 }
 
-.logo {
-  
-}
-
 .header__header {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: 1;
@@ -156,7 +152,6 @@
 
 .card__image-flower {
   filter: brightness(150%);
-  
 }
 
 .card__image-leigh {
@@ -358,7 +353,7 @@
   grid-area: text;
 }
 
-.dialog__save form  {
+.dialog__save form {
   inline-size: 100%;
   grid-area: form;
 }
