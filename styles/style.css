@@ -69,11 +69,6 @@
   inline-size: var(--block-width);
   color: var(--color, #000);
   font-family: var(--main-font-family, Inter-Variable), sans-serif;
-
-/* 
-  margin-top: -200px;
-  background-color: greenyellow; */
-
 }
 
 .cards__list {
@@ -92,8 +87,8 @@
 .card__title {
   font-weight: var(--header-font-weight, 715);
   font-size: 18px;
-  line-height: 1;
-  padding: 7px 10px 5px;
+  line-height: 1.2;
+  padding: 4px 10px;
 }
 
 @supports(font-variation-settings: normal) {
@@ -184,15 +179,18 @@
 
 .button {
   position: relative;
-  background-color: var(--bg-color, #fff);
   border: 2px solid var(--color, #000);
   transition: box-shadow 0.3s;
   color: var(--bg-color, #fff);
   background: var(--bg-color, #fff);
+  cursor: pointer;
 }
 
 .button:focus {
   outline: none;
+}
+
+.button:focus-visible {
   box-shadow: 2px 2px var(--color, #000);
 }
 
@@ -214,14 +212,18 @@
 }
 
 .card__icon-button {
-  background: transparent;
+  display: grid;
+  justify-content: center;
+  align-content: center;
   inline-size: 38px;
   block-size: 38px;
   margin-inline-end: 7px;
   padding: 1px 3px;
+  background: transparent;
   border: 2px solid transparent;
   line-height: 0;
   transition: border 0.3s;
+  cursor: pointer;
 }
 
 .card__icon-button:focus {
