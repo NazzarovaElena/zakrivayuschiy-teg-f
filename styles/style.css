@@ -34,7 +34,7 @@
 /* стили блока header */
 
 .header {
-  margin: 100px auto;
+  margin: 100px auto 98px;
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0;
   inline-size: var(--block-width);
   color: var(--color, #000);
@@ -70,9 +70,9 @@
   color: var(--color, #000);
   font-family: var(--main-font-family, Inter-Variable), sans-serif;
 
-
+/* 
   margin-top: -200px;
-  background-color: greenyellow;
+  background-color: greenyellow; */
 
 }
 
@@ -93,7 +93,7 @@
   font-weight: var(--header-font-weight, 715);
   font-size: 18px;
   line-height: 1;
-  padding: 4px 10px;
+  padding: 7px 10px 5px;
 }
 
 @supports(font-variation-settings: normal) {
@@ -109,14 +109,10 @@
   line-height: 0;
 }
 
-.card__image picture {
+.card__image picture, .card__image img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-}
-
-.card__image img {
-  width: 100%;
 }
 
 .card__label {
@@ -152,35 +148,35 @@
   margin: 25px;
 }
 
-.card__image-bird {
+.filter-saturate {
   filter: saturate(150%);
 }
 
-.card__image-paper {
+.filter-sepia {
   filter: sepia(40%);
 }
 
-.card__image-flower {
+.filter-brightness {
   filter: brightness(150%);
 }
 
-.card__image-leigh {
+.filter-grayscale {
   filter: grayscale(0.8);
 }
 
-.card__image-cactus {
+.filter-hue-rotate {
   filter: hue-rotate(60deg);
 }
 
-.card__image-giraffe {
+.filter-invert {
   filter: invert(0.2);
 }
 
-.card__image-squirrel {
+.filter-opacity {
   filter: opacity(0.9);
 }
 
-.card__image-swing {
+.filter-brightness-hue-rotate-opacity {
   filter: brightness(120%) hue-rotate(10deg) opacity(0.95);
 }
 
@@ -379,6 +375,10 @@ dialog::backdrop {
 } 
 
 @media (width <= 375px) {
+  .header {
+    margin: 100px auto;
+  }
+
   .button__save {
     grid-auto-flow: row;
   }
