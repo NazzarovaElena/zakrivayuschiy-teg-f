@@ -48,6 +48,7 @@
 
 .header__sub-header {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
   line-height: 1;
   padding-top: 20px;
 }
