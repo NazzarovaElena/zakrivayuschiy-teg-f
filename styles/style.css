@@ -15,6 +15,8 @@
   min-block-size: 100dvb;
   font-family: var(--main-font-family, Inter-Variable), sans-serif;
   font-weight: var(--text-font-weight, 410);
+  /* по заданию background должен состоять из сложных градиентов,
+     быть fixed, иметь размер cover */
   background-image: var(--background-image);
   background-attachment: fixed;
   background-size: cover;
