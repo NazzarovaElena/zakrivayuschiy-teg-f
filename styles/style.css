@@ -15,19 +15,17 @@
   min-block-size: 100dvb;
   font-family: var(--main-font-family), sans-serif;
   font-weight: var(--text-font-weight);
-  background-image: var(--background-image); /* сделана замена transparent на цвет для Safari */
-  background-attachment: fixed; /* как проверить что работает?*/
+  background-image: var(--background-image);
+  background-attachment: fixed;
   background-size: cover;
   font-size: 18px;
   line-height: 21px;
-
 }
 
 @supports(font-variation-settings: normal) {
   .page {
     font-variation-settings: "wght" var(--text-font-weight);
   }
-  
 }
 
 /* стили блока header */
@@ -366,7 +364,6 @@
 
 dialog::backdrop {
   background-color: rgb(from var(--color) r g b / 0.75);
-  /* backdrop-filter: blur(1px); */
 } 
 
 @media (width <= 375px) {
