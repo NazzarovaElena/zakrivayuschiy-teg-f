@@ -2,7 +2,8 @@
 :root {
 
 --main-font-family: Inter-Variable;
---accent-font-family: PressStart2P-Regular;
+--accent-font-family: PressStart2P;
+--accent-font-weight: 400;
 --color: #000;
 --bg-color: #fff;
 --label-color: rgba(0, 0, 0, 0.5);
