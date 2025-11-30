@@ -13,8 +13,8 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font-family), sans-serif;
-  font-weight: var(--text-font-weight);
+  font-family: var(--main-font-family, Inter-Variable), sans-serif;
+  font-weight: var(--text-font-weight, 410);
   background-image: var(--background-image);
   background-attachment: fixed;
   background-size: cover;
@@ -24,7 +24,7 @@
 
 @supports(font-variation-settings: normal) {
   .page {
-    font-variation-settings: "wght" var(--text-font-weight);
+    font-variation-settings: "wght" var(--text-font-weight, 410);
   }
 }
 
@@ -34,11 +34,11 @@
   margin: 100px auto;
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0;
   inline-size: var(--block-width);
-  color: var(--color);
-  background-color: var(--bg-color);
-  border: 2px solid var(--color);
-  font-family: var(--accent-font-family), monospace;
-  font-weight: var(--accent-font-weight);
+  color: var(--color, #000);
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--color, #000);
+  font-family: var(--accent-font-family, PressStart2P), monospace;
+  font-weight: var(--accent-font-weight, 400);
   text-align: center;
 }
 
@@ -63,8 +63,8 @@
   gap: 50px;
   margin: 0 auto;
   inline-size: var(--block-width);
-  color: var(--color);
-  font-family: var(--main-font-family), sans-serif;
+  color: var(--color, #000);
+  font-family: var(--main-font-family, Inter-Variable), sans-serif;
   padding-bottom: 100px;
 }
 
@@ -77,12 +77,12 @@
 
 .card {
   display: grid;
-  border: 2px solid var(--color);
-  background-color: var(--bg-color);
+  border: 2px solid var(--color, #000);
+  background-color: var(--bg-color, #fff);
 }
 
 .card__title {
-  font-weight: var(--header-font-weight);
+  font-weight: var(--header-font-weight, 715);
   font-size: 18px;
   line-height: 1;
   padding: 4px 10px;
@@ -90,14 +90,14 @@
 
 @supports(font-variation-settings: normal) {
   .card__title {
-    font-variation-settings: "wght" var(--header-font-weight);
+    font-variation-settings: "wght" var(--header-font-weight, 715);
   }
 }
 
 .card__image {
   position: relative;
-  border-top: 2px solid var(--color);
-  border-bottom: 2px solid var(--color);
+  border-top: 2px solid var(--color, #000);
+  border-bottom: 2px solid var(--color, #000);
   line-height: 0;
 }
 
@@ -113,7 +113,7 @@
 
 .card__label {
   position: absolute;
-  font-family: var(--accent-font-family), monospace;
+  font-family: var(--accent-font-family, PressStart2P), monospace;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 1;
@@ -180,21 +180,21 @@
 
 .button {
   position: relative;
-  background-color: var(--bg-color);
-  border: 2px solid var(--color);
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--color, #000);
   transition: box-shadow 0.3s;
-  color: var(--bg-color);
-  background: var(--bg-color);
+  color: var(--bg-color, #fff);
+  background: var(--bg-color, #fff);
 }
 
 .button:focus {
   outline: none;
-  box-shadow: 2px 2px var(--color);
+  box-shadow: 2px 2px var(--color, #000);
 }
 
 .button::before {
   content: '';
-  background: var(--color);
+  background: var(--color, #000);
   inline-size: 100%;
   block-size: 100%;
   position: absolute;
@@ -225,12 +225,12 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--color);
+  border: 2px solid var(--color, #000);
 }
 
 .like-icon.is-liked .heart {
   animation: 0.1s ease-in 0.3s;
-  animation-name: heart;
+  animation-name: scale_up;
   transform-origin: center;
 }
 
@@ -240,7 +240,7 @@
 
 .like-icon.is-liked .sparks {
   animation: 0.3s ease-in 0.3s;
-  animation-name: sparks;
+  animation-name: fade_in;
 }
 
 .contour {
@@ -297,7 +297,7 @@
 
 .button__text {
   position: relative;
-  font-family: var(--accent-font-family), monospace;
+  font-family: var(--accent-font-family, PressStart2P), monospace;
   font-size: 14px;
   line-height: 0.9;
   letter-spacing: 0;
@@ -314,12 +314,12 @@
   gap: 8px;
   padding: 15px 20px;
   justify-self: center;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #fff);
   block-size: auto;
 }
 
 .button__save svg {
-  fill: var(--bg-color);
+  fill: var(--bg-color, #fff);
   position: relative;
   inline-size: 21px;
   block-size: 21px;
@@ -330,7 +330,7 @@
   display: none;
   inline-size: 353px;
   padding: 30px;
-  font-family: var(--accent-font-family), monospace;
+  font-family: var(--accent-font-family, PressStart2P), monospace;
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;
@@ -344,7 +344,7 @@
 }
 
 .dialog__save svg {
-  fill: var(--color);
+  fill: var(--color, #000);
   inline-size: 39px;
   block-size: 39px;
   margin: 12px 20px 12px 0;
@@ -367,7 +367,7 @@
 }
 
 dialog::backdrop {
-  background-color: rgb(from var(--color) r g b / 0.75);
+  background-color: rgb(from var(--color, #000) r g b / 0.75);
 } 
 
 @media (width <= 375px) {
